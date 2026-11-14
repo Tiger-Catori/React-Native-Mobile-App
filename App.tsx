@@ -1,13 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import IntroScreenComponent from './src/screens/IntroScreen';
+import ContactUsScreenComponent from './src/screens/ContactUsScreen';
 
 export default function App() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
-        <IntroScreenComponent/>
+        {/*<IntroScreenComponent />*/}
+        <ContactUsScreenComponent />
       </SafeAreaView>
     </SafeAreaProvider>
   );
