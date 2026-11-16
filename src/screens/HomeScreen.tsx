@@ -1,6 +1,8 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, FlatList} from "react-native";
 import { vs, s } from "react-native-size-matters";
 import TobTapsComponent from "../components/TopTabs";
+import MeditationCardComponent from "../components/MeditationCard";
+import { dummyData } from "../data/data";
 
 const HomeScreenComponent = () => {
   return (
@@ -17,13 +19,23 @@ const HomeScreen = () => {
         Lorem ipsum is simply dummy text
       </Text>
       <TobTapsComponent />
+      <FlatList
+        data={dummyData}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => <MeditationCardComponent imageURL={item.image} title={item.title} date={item.date} />}
+        showsVerticalScrollIndicator={false}
+        numColumns={2}
+        columnWrapperStyle={styles.columWrapperStyle}
+        contentContainerStyle={styles.contentContainerStyle}
+      />
+
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   view: {
-    paddingTop: vs(20),
+    paddingTop: vs(10),
     paddingHorizontal: s(16),
   },
   text__title: {
@@ -36,5 +48,13 @@ const styles = StyleSheet.create({
     fontSize: s(14),
     color: '#2C2016',
     marginBottom: vs(16)
+  },
+  columWrapperStyle: {
+    marginBottom: vs(12),
+    justifyContent: 'space-between'
+  },
+  contentContainerStyle: {
+    paddingBottom: vs(150),
+    paddingTop: vs(24)
   }
 })

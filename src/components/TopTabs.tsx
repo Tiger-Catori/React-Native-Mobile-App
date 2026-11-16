@@ -25,6 +25,7 @@ const TobTaps = () => {
 
           return (
             <TouchableOpacity onPress={() => setActiveTab(tabName)}
+              key={tabName}
               style={[styles.tabButton,
             isActive && { backgroundColor: ACTIVE_BG }]}>
               <Text style={isActive ? styles.activeText : styles.inActiveText}>
