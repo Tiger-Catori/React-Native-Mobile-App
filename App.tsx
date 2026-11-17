@@ -3,6 +3,7 @@ import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import IntroScreenComponent from './src/screens/IntroScreen';
 import ContactUsScreenComponent from './src/screens/ContactUsScreen';
 import HomeScreenComponent from './src/screens/HomeScreen';
+import PaymentScreenComponent from './src/screens/PaymentScreen';
 
 export default function App() {
   return (
@@ -10,7 +11,8 @@ export default function App() {
       <SafeAreaView style={styles.container}>
         {/*<IntroScreenComponent />*/}
         {/*<ContactUsScreenComponent />*/}
-        <HomeScreenComponent />
+        {/*<HomeScreenComponent />*/}
+        <PaymentScreenComponent/>
       </SafeAreaView>
     </SafeAreaProvider>
   );
